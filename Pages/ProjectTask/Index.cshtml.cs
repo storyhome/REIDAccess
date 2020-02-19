@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using REIDAccess.Data;
 using REIDAccess.Models;
 
-namespace REIDAccess
+namespace REIDAccess.Pages.ProjectTask
 {
     public class IndexModel : PageModel
     {
@@ -19,11 +19,11 @@ namespace REIDAccess
             _context = context;
         }
 
-        public IList<Project> Project { get;set; }
+        public IList<ProjectTaskModel> ProjectTask { get;set; }
 
         public async Task OnGetAsync()
         {
-            Project = await _context.Project.ToListAsync();
+            ProjectTask = await _context.ProjectTask.ToListAsync();
         }
     }
 }

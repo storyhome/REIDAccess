@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace REIDAccess.Models
 {
-    public class Project
+    public class ProjectModel
     {
         public int Id { get; set; }
         public ProjectType Type { get; set; }
@@ -19,7 +19,7 @@ namespace REIDAccess.Models
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
         public StatusType Status { get; set; }
-        public IEnumerable<ProjectTask> Tasks { get; set; }
+        public IEnumerable<ProjectTaskModel> Tasks { get; set; }
     }
 
     public enum ProjectType

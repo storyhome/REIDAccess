@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using REIDAccess.Data;
 using REIDAccess.Models;
 
-namespace REIDAccess
+namespace REIDAccess.Pages.ProjectTask
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace REIDAccess
         }
 
         [BindProperty]
-        public Project Project { get; set; }
+        public ProjectTaskModel ProjectTask { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace REIDAccess
                 return NotFound();
             }
 
-            Project = await _context.Project.FirstOrDefaultAsync(m => m.Id == id);
+            ProjectTask = await _context.ProjectTask.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Project == null)
+            if (ProjectTask == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace REIDAccess
                 return Page();
             }
 
-            _context.Attach(Project).State = EntityState.Modified;
+            _context.Attach(ProjectTask).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace REIDAccess
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProjectExists(Project.Id))
+                if (!ProjectTaskExists(ProjectTask.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace REIDAccess
             return RedirectToPage("./Index");
         }
 
-        private bool ProjectExists(int id)
+        private bool ProjectTaskExists(int id)
         {
-            return _context.Project.Any(e => e.Id == id);
+            return _context.ProjectTask.Any(e => e.Id == id);
         }
     }
 }

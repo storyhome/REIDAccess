@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using REIDAccess.Data;
 using REIDAccess.Models;
 
-namespace REIDAccess
+namespace REIDAccess.Pages.Projects
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace REIDAccess
             _context = context;
         }
 
-        public Project Project { get; set; }
+        public ProjectModel Project { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using REIDAccess.Data;
 using REIDAccess.Models;
 
-namespace REIDAccess
+namespace REIDAccess.Pages.Projects
 {
     public class CreateModel : PageModel
     {
@@ -25,7 +25,7 @@ namespace REIDAccess
         }
 
         [BindProperty]
-        public Project Project { get; set; }
+        public ProjectModel Project { get; set; }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.

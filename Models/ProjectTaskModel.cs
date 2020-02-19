@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace REIDAccess.Models
 {
-    public class ProjectTask
+    public class ProjectTaskModel
     {
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int Needed { get; set; }
-        public Project Project { get; set; }
+        public ProjectModel Project { get; set; }
         public IEnumerable<Resource> Resources { get; set; }
     }
 }

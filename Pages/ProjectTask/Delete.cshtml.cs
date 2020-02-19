@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using REIDAccess.Data;
 using REIDAccess.Models;
 
-namespace REIDAccess
+namespace REIDAccess.Pages.ProjectTask
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace REIDAccess
         }
 
         [BindProperty]
-        public Project Project { get; set; }
+        public ProjectTaskModel ProjectTask { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace REIDAccess
                 return NotFound();
             }
 
-            Project = await _context.Project.FirstOrDefaultAsync(m => m.Id == id);
+            ProjectTask = await _context.ProjectTask.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Project == null)
+            if (ProjectTask == null)
             {
                 return NotFound();
             }
@@ -45,11 +45,11 @@ namespace REIDAccess
                 return NotFound();
             }
 
-            Project = await _context.Project.FindAsync(id);
+            ProjectTask = await _context.ProjectTask.FindAsync(id);
 
-            if (Project != null)
+            if (ProjectTask != null)
             {
-                _context.Project.Remove(Project);
+                _context.ProjectTask.Remove(ProjectTask);
                 await _context.SaveChangesAsync();
             }
 

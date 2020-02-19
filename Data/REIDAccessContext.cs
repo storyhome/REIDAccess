@@ -14,8 +14,8 @@ namespace REIDAccess.Data
         {
         }
 
-        public DbSet<REIDAccess.Models.Project> Project { get; set; }
-        public DbSet<REIDAccess.Models.ProjectTask> ProjectTask { get; set; }
+        public DbSet<REIDAccess.Models.ProjectModel> Project { get; set; }
+        public DbSet<REIDAccess.Models.ProjectTaskModel> ProjectTask { get; set; }
         public DbSet<REIDAccess.Models.Resource> Resource { get; set; }
     }
 }

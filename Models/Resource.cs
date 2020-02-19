@@ -12,6 +12,6 @@ namespace REIDAccess.Models
         public int Cell { get; set; }
         public string Email { get; set; }
         public string Note { get; set; }
-        public ProjectTask Task { get; set; }
+        public ProjectTaskModel Task { get; set; }
     }
 }
